@@ -2,6 +2,12 @@
 
 Projeto de exemplo com **Node.js** e **PostgreSQL**, executado via **Docker**.
 
+## 📸 Resultado da Execução
+
+Abaixo, a comprovação do ambiente rodando localmente com Docker Compose:
+
+![Print da aplicação rodando](assets/resultado.png)
+
 ## Requisitos
 
 * Docker
