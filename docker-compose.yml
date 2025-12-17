@@ -4,13 +4,14 @@ services:
   web:
     build: ./app
     ports:
-      - [cite_start]"5000:5000"
+      - "5000:5000"
     depends_on:
-      - [cite_start]db
+      - db           
     environment:
-      - DATABASE_URL=postgres://user:password@db:5432/gestao_db
+      
+      DATABASE_URL: postgres://user:password@db:5432/gestao_db
     networks:
-      - [cite_start]rede_local
+      - rede_local
 
   db:
     image: postgres:15-alpine
@@ -18,9 +19,9 @@ services:
     environment:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: password
-      [cite_start]POSTGRES_DB: gestao_db
+      POSTGRES_DB: gestao_db
     volumes:
-      - [cite_start]pg_data:/var/lib/postgresql/data
+      - pg_data:/var/lib/postgresql/data
     networks:
       - rede_local
 
